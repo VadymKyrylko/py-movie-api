@@ -1,5 +1,8 @@
 from django.urls import path
-from .views import movie_list, movie_detail
+from cinema.views import movie_list, movie_detail
+
+
+app_name = "movieapi"
 
 urlpatterns = [
     path("movies/", movie_list, name="movie-list"),

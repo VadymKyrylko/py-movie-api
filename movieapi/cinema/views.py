@@ -3,8 +3,9 @@ from rest_framework import status
 from rest_framework.generics import get_object_or_404
 from rest_framework.response import Response
 
-from .models import Movie
-from .serializers import MovieSerializer
+from cinema.models import Movie
+from cinema.serializers import MovieSerializer
+
 
 @api_view(["GET", "POST"])
 def movie_list(request):
@@ -34,4 +35,3 @@ def movie_detail(request, pk):
     else:
         movie.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
-
